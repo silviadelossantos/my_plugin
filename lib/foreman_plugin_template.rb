@@ -1,4 +1,4 @@
-require 'foreman__plugin_template/engine'
+require 'foreman_plugin_template/engine'
 require 'aws-sdk-ec2'
 require 'terminal-table'
 
