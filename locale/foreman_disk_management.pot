@@ -1,6 +1,6 @@
-# foreman_disk_management
+# foreman__plugin_template
 #
-# This file is distributed under the same license as foreman_disk_management.
+# This file is distributed under the same license as foreman__plugin_template.
 #
 #, fuzzy
 msgid ""

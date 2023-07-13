@@ -1,7 +1,7 @@
 module ForemanPluginTemplate
   class Engine < ::Rails::Engine
     isolate_namespace ForemanPluginTemplate
-    engine_name 'foreman_disk_management'
+    engine_name 'foreman__plugin_template'
 
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
@@ -12,14 +12,14 @@ module ForemanPluginTemplate
     config.autoload_paths += Dir["#{config.root}/app/controllers"]
 
     # Add any db migrations
-    initializer 'foreman_disk_management.load_app_instance_data' do |app|
+    initializer 'foreman__plugin_template.load_app_instance_data' do |app|
       ForemanPluginTemplate::Engine.paths['db/migrate'].existent.each do |path|
         app.config.paths['db/migrate'] << path
       end
     end
 
-    initializer 'foreman_disk_management.register_plugin', :before => :finisher_hook do |_app|
-      Foreman::Plugin.register :foreman_disk_management do
+    initializer 'foreman__plugin_template.register_plugin', :before => :finisher_hook do |_app|
+      Foreman::Plugin.register :foreman__plugin_template do
         requires_foreman '>= 2.4.0'
 
         describe_host do
@@ -29,14 +29,14 @@ module ForemanPluginTemplate
         #register_global_js_file 'global'
 
         #Add permissions
-        security_block :foreman_disk_management do
-          permission :view_foreman_disk_management, { :'foreman_disk_management/example' => [:new_action],
+        security_block :foreman__plugin_template do
+          permission :view_foreman__plugin_template, { :'foreman__plugin_template/example' => [:new_action],
                                                       :'react' => [:index] }
           #permission :view_something,  {:snapshots => [:index] }
         end
 
         # # Add a new role called 'Discovery' if it doesn't exist
-         role 'ForemanDiskManagementPlugin', [:view_foreman_disk_management]
+         role 'ForemanDiskManagementPlugin', [:view_foreman__plugin_template]
 
         #add menu entry
         sub_menu :top_menu, :plugin_template, icon: 'pficon pficon-enterprise', caption: N_('Volume'), after: :hosts_menu do
@@ -51,7 +51,7 @@ module ForemanPluginTemplate
         #  :first => false
 
         # add dashboard widget
-        widget 'foreman_disk_management_widget', name: N_('Foreman plugin template widget'), sizex: 4, sizey: 1
+        widget 'foreman__plugin_template_widget', name: N_('Foreman plugin template widget'), sizex: 4, sizey: 1
       end
     end
 
@@ -81,9 +81,9 @@ module ForemanPluginTemplate
       end
     end
 
-    initializer 'foreman_disk_management.register_gettext', after: :load_config_initializers do |_app|
+    initializer 'foreman__plugin_template.register_gettext', after: :load_config_initializers do |_app|
       locale_dir = File.join(File.expand_path('../../..', __FILE__), 'locale')
-      locale_domain = 'foreman_disk_management'
+      locale_domain = 'foreman__plugin_template'
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
   end

@@ -24,5 +24,5 @@ ForemanPluginTemplate::Engine.routes.draw do
 end
 
  Foreman::Application.routes.draw do
-   mount ForemanPluginTemplate::Engine, at: '/foreman_disk_management'
+   mount ForemanPluginTemplate::Engine, at: '/foreman__plugin_template'
  end

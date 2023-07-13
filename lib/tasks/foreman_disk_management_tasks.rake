@@ -1,7 +1,7 @@
 require 'rake/testtask'
 
 # Tasks
-namespace :foreman_disk_management do
+namespace :foreman__plugin_template do
   namespace :example do
     desc 'Example Task'
     task task: :environment do
@@ -13,7 +13,7 @@ end
 # Tests
 namespace :test do
   desc 'Test ForemanPluginTemplate'
-  Rake::TestTask.new(:foreman_disk_management) do |t|
+  Rake::TestTask.new(:foreman__plugin_template) do |t|
     test_dir = File.expand_path('../../test', __dir__)
     t.libs << 'test'
     t.libs << test_dir
@@ -23,11 +23,11 @@ namespace :test do
   end
 end
 
-namespace :foreman_disk_management do
+namespace :foreman__plugin_template do
   task :rubocop do
     begin
       require 'rubocop/rake_task'
-      RuboCop::RakeTask.new(:rubocop_foreman_disk_management) do |task|
+      RuboCop::RakeTask.new(:rubocop_foreman__plugin_template) do |task|
         task.patterns = ["#{ForemanPluginTemplate::Engine.root}/app/**/*.rb",
                          "#{ForemanPluginTemplate::Engine.root}/lib/**/*.rb",
                          "#{ForemanPluginTemplate::Engine.root}/test/**/*.rb"]
@@ -36,13 +36,13 @@ namespace :foreman_disk_management do
       puts 'Rubocop not loaded.'
     end
 
-    Rake::Task['rubocop_foreman_disk_management'].invoke
+    Rake::Task['rubocop_foreman__plugin_template'].invoke
   end
 end
 
-Rake::Task[:test].enhance ['test:foreman_disk_management']
+Rake::Task[:test].enhance ['test:foreman__plugin_template']
 
 load 'tasks/jenkins.rake'
 if Rake::Task.task_defined?(:'jenkins:unit')
-  Rake::Task['jenkins:unit'].enhance ['test:foreman_disk_management', 'foreman_disk_management:rubocop']
+  Rake::Task['jenkins:unit'].enhance ['test:foreman__plugin_template', 'foreman__plugin_template:rubocop']
 end

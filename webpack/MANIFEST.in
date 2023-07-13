@@ -1,1 +1,1 @@
-include lib/foreman_disk_management/version.rb
+include lib/foreman__plugin_template/version.rb

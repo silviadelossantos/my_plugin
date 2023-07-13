@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gemspec :name => 'foreman_disk_management'
+gemspec :name => 'foreman__plugin_template'
 
 gem 'rubocop', '~> 0.87.0'
 gem 'rubocop-minitest', '~> 0.9.0'

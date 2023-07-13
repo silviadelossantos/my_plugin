@@ -1,5 +1,5 @@
 {
-  "name": "foreman_disk_management",
+  "name": "foreman__plugin_template",
   "version": "1.0.0",
   "description": "DESCRIPTION",
   "main": "index.js",
@@ -15,10 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theforeman/foreman_disk_management.git"
+    "url": "git+https://github.com/theforeman/foreman__plugin_template.git"
   },
   "bugs": {
-    "url": "http://projects.theforeman.org/projects/foreman_disk_management/issues"
+    "url": "http://projects.theforeman.org/projects/foreman__plugin_template/issues"
   },
   "peerDependencies": {
     "@theforeman/vendor": ">= 6.0.0"

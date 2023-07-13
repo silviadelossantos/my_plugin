@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foreman_disk_management (0.0.1)
+    foreman__plugin_template (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -39,7 +39,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  foreman_disk_management!
+  foreman__plugin_template!
   rdoc
   rubocop
 

@@ -1,2 +1,2 @@
-# Matches foreman_disk_management.gemspec
+# Matches foreman__plugin_template.gemspec
 _('TODO: Description of ForemanPluginTemplate.')

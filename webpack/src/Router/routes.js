@@ -3,7 +3,7 @@ import WelcomePage from './WelcomePage';
 
 const routes = [
   {
-    path: '/foreman_disk_management/welcome',
+    path: '/foreman__plugin_template/welcome',
     exact: true,
     render: (props) => <WelcomePage {...props} />,
   }

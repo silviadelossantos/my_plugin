@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :host do
-    name 'foreman_disk_management'
+    name 'foreman__plugin_template'
   end
 end

@@ -10,7 +10,7 @@ Object.entries(reducers).forEach(([key, reducer]) =>
 );
 
 // register client routes
-registerRoutes('foreman_disk_management', Routes);
+registerRoutes('foreman__plugin_template', Routes);
 
 // register fills for extending foreman core
 // http://foreman.surge.sh/?path=/docs/introduction-slot-and-fill--page

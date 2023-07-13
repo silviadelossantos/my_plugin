@@ -1,7 +1,7 @@
-require File.expand_path('../lib/foreman_disk_management/version', __FILE__)
+require File.expand_path('../lib/foreman__plugin_template/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = 'foreman_disk_management'
+  s.name        = 'foreman__plugin_template'
   s.version     = ForemanPluginTemplate::VERSION
   s.metadata    = { "is_foreman_plugin" => "true" }
   s.license     = 'GPL-3.0'
