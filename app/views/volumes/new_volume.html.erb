@@ -1,0 +1,43 @@
+<h1>New Volume</h1>
+<br>
+<%= form_with url: save_volume_path, local: true, method: :post, class: "form-horizontal well"  do %>
+    <div class="row">
+        <%= label_tag "Name", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%= text_field_tag "name", nil, class:"form-control", :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Description", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%= text_field_tag "description", nil, class:"form-control" , :required => true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Zone", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%=select_tag "zone", options_for_select([ "us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1e", "us-east-1f"], "us-east-1a"), class:"form-control", :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Attach", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%=select_tag "server", options_for_select(@servers), :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Volume Type", nil,  class:"col-md-2 control-label"%>
+        <div class=col-md-4>
+            <%=select_tag "type", options_for_select([ "gp2", "standard", "st1", "sc1", "io2", "io1", "gp3"], "gp2"), class:"form-control", :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Size in GB", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%= number_field_tag "size", nil, class:"form-control", :required => true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= submit_tag "Create" , :class => "btn btn-primary" %>
+    </div>
+ <% end %>

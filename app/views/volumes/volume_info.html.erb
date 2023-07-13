@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div>
+<h1>Volume</h1>
+<div class="btn-toolbar pull-right">
+        <%= button_to "Attach", attach_volume_path, :id => @vol ,:class => "btn btn-primary"%>
+        <button data-toggle="modal" href="#mi_modal" class="btn btn-primary" style= 'margin-right: 5px'>Detach</button>
+        <!-- Modal-->
+        <div class="modal fade" id="mi_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                        </button>
+                        <h3 class="modal-title" id="myModalLabel">Confirm</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" style="padding:10px">
+                            Are you sure to to deatach the volume <%=@vol%>?         
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <%= button_to "Confirm", detach_path, :id => @vol, class:"btn btn-danger pull-left" %>
+                        <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= button_to "New Snapshot", new_snapshot_path, :id => @vol, class: 'btn btn-primary', style: 'margin-right: 5px' %> 
+
+</div>
+<hr>
+        <%# <div class="tab">
+            <button class="tablinks" >Info</button>
+            <button class="tablinks" >Snapshots</button>
+        </div> %>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#info">Info</a></li>
+            <li><a data-toggle="tab" href="#snapshots">Snapshots</a></li>
+        </ul>
+  <div class="tab-content">
+    <div id="info" class="tab-pane fade in active">
+        <table class="<%= table_css_classes 'table-fixed' %>">
+            <tbody>
+                <tr>
+                    <td>Description</td>
+                    <td><%= @info[:description] %></td>
+                </tr>
+                <tr>
+                    <td>Deployment</td>
+                    <td><%= @info[:deployment] %></td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td><%= @vol %></td>
+                </tr>
+                <tr>
+                    <td>Availability Zone</td>
+                    <td><%= @info[:az] %></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td><%= @info[:status] %></td>
+                </tr>
+                <tr>
+                    <td>Size in GB</td>
+                    <td><%= @info[:size] %></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td><%= @info[:type] %></td>
+                </tr>
+                <tr>
+                    <td>IOPS</td>
+                    <td><%= @info[:iops] %></td>
+                </tr>
+                <tr>
+                    <td>Attachment Status</td>
+                    <td><%= @info[:attach_status] %></td>
+                </tr>
+                <tr>
+                    <td>Server</td>
+                    <td><%= @info[:instance_id] %></td>
+                </tr>
+                <tr>
+                    <td>Device</td>
+                    <td><%= @info[:device] %></td>
+                </tr>
+                <tr>
+                    <td>Created from</td>
+                    <td><%= @info[:created_from] %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="snapshots" class="tab-pane fade">
+        <table class="<%= table_css_classes 'table-fixed' %>">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Started at</th>
+                </tr>
+                <% @snapshots.each do |snap| %>
+                    <tr>
+                        <td><%= link_to snap[0].start_with?("AUTOMATIC") ? snap[1] : snap[0], snapshot_info_path(snap[1]) %></td>
+                            <%# <a href=<%= snap[0] %>
+                                <%# <% if (snap[0].start_with?(["AUTOMATIC"])) then %> 
+                                <%# <%= snap[1] %> 
+                                <%# <% else %> 
+                                <%# <%= snap[0] %> 
+                                <%# <% end %> 
+                            <%# </a>  %>
+                        </td>
+                        <td><%= snap[1] %></td>
+                        <td><%= @vol %></td>
+                        <td><%= snap[3] %></td>
+                        <td><%= snap[2] %></td>
+                        <td>Placeholder</td>
+                    </tr>
+                <%end%>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

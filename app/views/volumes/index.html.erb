@@ -1,0 +1,31 @@
+<%#<%= stylesheet_link_tag 'style.css' %>
+<h1>Volumes</h1>
+<div class="btn-toolbar pull-left">
+        <%= button_to "Create Volume", new_volume_path, :id => @snap, :class => "btn btn-primary" %>
+</div>
+<br><br>
+<table class="<%= table_css_classes 'table-fixed' %>">
+    <%# <caption>Volumes</caption> %>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Vol. ID</th>
+        <th scope="col">Age</th>
+        <th scope="col">AZ</th>
+        <th scope="col">Type</th>
+        <th scope="col">Size</th>
+        <th scope="col">State</th>
+        <th scope="col">Server</th>
+    </tr>
+      <% @volumes.each do |vol| %>
+        <tr>
+            <td><%= link_to vol[0].empty? ? vol[1] : vol[0], volume_info_path(vol[1]) %></td>
+            <td><%= vol[1] %></td>
+            <td><%= vol[2] %></td>
+            <td><%= vol[3] %></td>
+            <td><%= vol[4] %></td>
+            <td><%= vol[5] %></td>
+            <td><%= vol[6] %></td>
+            <td><%= vol[7] %></td>
+        </tr>
+      <%end%>
+</table>

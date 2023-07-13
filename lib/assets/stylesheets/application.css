@@ -1,0 +1,65 @@
+/* @import "bootstrap";
+ @import "bootstrap-sprockets"; */
+ table {
+    border: 1px solid #999;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
+ }
+ caption, td, th {
+    padding: 0.3em;
+ }
+ th, td {
+    border-bottom: 1px solid #999;
+ }
+ tr:nth-child(even){
+    background-color: #f2f2f2;
+ }
+
+ .w40 {
+     width: 40%;
+ }
+
+ .w70 {
+    width: 70%;
+}
+
+.inline {
+    display:flex;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

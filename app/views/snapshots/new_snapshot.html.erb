@@ -1,0 +1,26 @@
+<h1>New Snapshot</h1>
+<br>
+<%= form_with url: save_snapshot_path, local: true, method: :post, class: "form-horizontal well"  do%>
+    <div class="row">
+        <%= label_tag "Name", nil,  class:"col-md-2 control-label"%>
+        <div class=col-md-4>
+            <%= text_field_tag "name", nil, class:"form-control", :required => true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Volume ID", nil, :class => "col-md-2 control-label"%>
+        <div class=col-md-4>
+            <%= text_field_tag "Volume ID",@vol, class:"form-control", :required => true, :disabled => true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "Description", nil,  class:"col-md-2 control-label"%>
+        <div class=col-md-4>
+            <%= text_field_tag "description", nil, class:"form-control" , :required => true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+     <%= submit_tag "Create", :class => "btn btn-primary"%>
+    </div>
+ <% end %>
+    

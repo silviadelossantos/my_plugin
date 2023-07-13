@@ -1,0 +1,28 @@
+<%#<%= stylesheet_link_tag 'style.css' %>
+<h1>Snapshots</h1>
+<div>
+    <button>snapshot</button>
+</div>
+<table class="<%= table_css_classes 'table-fixed' %>">
+    <%# <caption>Volumes</caption> %>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Snapshot ID</th>
+        <th scope="col">Vol. ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Started</th>
+    </tr>
+      <% @snapshots.each do |snap| %>
+        <tr>
+            <td><%= snap[0] %></td>
+            <td><%= snap[1] %></td>
+            <td><%= snap[2] %></td>
+            <td><%= snap[3] %></td>
+            <td><%= snap[4] %></td>
+            <td><%= snap[5] %></td>
+            <td><%= snap[6] %></td>
+            <td><%= snap[7] %></td>
+        </tr>
+      <%end%>
+</table>
+

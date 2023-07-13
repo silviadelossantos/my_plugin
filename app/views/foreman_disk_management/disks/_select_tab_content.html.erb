@@ -1,0 +1,24 @@
+
+<div class='tab-pane' id='disks'>
+<%= webpacked_plugins_js_for :foreman_disk_management %>
+<%= react_component('DiskSwitcher') %>
+<%= react_component('AnsibleRolesSwitcher') %>
+        <tr>
+            <th scope="col">Storage</th>
+            <th scope="col">Storage Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">Device</th>
+            <th scope="col">Size</th>
+            <th scope="col">Actions</th>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+    <br>
+    <br>
+    
+    <a class="btn btn-default"> Attach Existing Volume on Boot </a>
+    <a class="btn btn-default"> Attach Existing Snapshot on Boot </a>
+</div>
+
+

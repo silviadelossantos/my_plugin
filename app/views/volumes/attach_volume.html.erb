@@ -1,0 +1,24 @@
+<h1>Schedule a Volume to be attached to a Server</h1>
+<%= form_with url: attach_path, local: true, method: :post, class: "form-horizontal well"  do %>
+    <div class="row">
+        <%= label_tag "Volume", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+             <%= text_field_tag "volume", @vol, class:"form-control", :required => true , :disabled=> true %><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "to Server", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%=select_tag "server", options_for_select(@servers), :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= label_tag "as Device", nil,  class:"col-md-2 control-label" %>
+        <div class=col-md-4>
+            <%= text_field_tag "device", nil, class:"form-control", :required => true%><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <%= submit_tag "Schedule" , :class => "btn btn-primary" %>
+    </div>
+ <% end %>

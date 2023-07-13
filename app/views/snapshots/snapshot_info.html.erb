@@ -1,0 +1,68 @@
+<div>
+<h1>Snapshots</h1>
+
+<hr>
+<div class="btn-toolbar pull-right">
+    <%= button_to "Create", new_volume_from_snapshot_path, :id => @snap , :class => "btn btn-primary" %>
+    <button data-toggle="modal" href="#mi_modal" class="btn btn-primary" style= 'margin-right: 5px'>Delete</button>
+    <!-- Modal-->
+    <div class="modal fade" id="mi_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title" id="myModalLabel">Confirm</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="padding:10px">
+                         Are you sure to to delete it the snapshot <%=@snap%>?                   
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <%= button_to "Confirm", delete_snapshot_path, :id => @snap, class:"btn btn-danger pull-left " %>
+                    <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<table class="<%= table_css_classes 'table-fixed' %>">
+    <tbody>
+        <tr>
+            <td>Description</td>
+            <td><%= @info[:description] %></td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td><%= @snap %></td>
+        </tr>
+        <tr>
+            <td>Volume</td>
+            <td><%= @info[:volume_id] %></td>
+        </tr>
+        <tr>
+            <td>Size in GB</td>
+            <td><%= @info[:size] %></td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td><%= @info[:state] %></td>
+        </tr>
+        <tr>
+            <td>Progress</td>
+            <td><%= @info[:progress] %></td>
+        </tr>
+        <tr>
+            <td>HREF</td>
+            <td><%= @info[:started] %></td>
+        </tr>
+        <tr>
+            <td>Created at</td>
+            <td><%= @info[:started] %></td>
+        </tr>
+    </tbody>
+</table>
+</div>
