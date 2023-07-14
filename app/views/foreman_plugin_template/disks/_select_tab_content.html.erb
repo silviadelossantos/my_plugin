@@ -1,6 +1,5 @@
 
 <div class='tab-pane' id='disks'>
-<%= webpacked_plugins_js_for :foreman_plugin_template %>
 <%= react_component('DiskSwitcher') %>
 <%= react_component('AnsibleRolesSwitcher') %>
         <tr>
@@ -22,3 +21,4 @@
 </div>
 
 
+echo “[+] 2021:$(tree -a 2021  |tail -n 1 | cut -d ‘,’ -f 2)"
