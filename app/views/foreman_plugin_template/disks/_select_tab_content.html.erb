@@ -1,7 +1,6 @@
 
 <div class='tab-pane' id='disks'>
 <%= react_component('DiskSwitcher') %>
-<%= react_component('AnsibleRolesSwitcher') %>
         <tr>
             <th scope="col">Storage</th>
             <th scope="col">Storage Type</th>
@@ -19,6 +18,3 @@
     <a class="btn btn-default"> Attach Existing Volume on Boot </a>
     <a class="btn btn-default"> Attach Existing Snapshot on Boot </a>
 </div>
-
-
-echo “[+] 2021:$(tree -a 2021  |tail -n 1 | cut -d ‘,’ -f 2)"
